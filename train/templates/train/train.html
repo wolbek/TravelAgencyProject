@@ -1,0 +1,57 @@
+{%extends 'flight/base.html'%}
+{%block content%}
+
+{%load static%}
+
+<form action="{%url 'train1:availabletrain'%}">  
+
+  <link rel="stylesheet" href="{%static 'flight/train.css'%}">
+  <section>
+    <div class="imgbox">
+      <img src="{%static 'flight/bgt1.jpg'%}">        
+    </div>
+
+      <div class="contentbox">
+        <div class="formbox">
+          <h2>Train Booking</h2>
+          <form action="index.html" method="post">
+
+            <div class="inputbox">
+              <span>From</span>
+              <input name="location1" type="text" placeholder="City or Station" required>
+            </div>
+
+            <div class="inputbox">
+              <span>To</span>
+              <input name="location2" type="text" placeholder="City or Station" required>
+            </div>
+
+            <div class="inputbox">
+              <span>Departure Date</span>
+              <input name="departuredate" type="date" required>
+            </div>
+
+            <div class="inputbox1">
+            <span>Travel Class</span>
+              <select>
+                <option value="2">Second Seating Class</option>
+                <option value="3">Sleeper Class</option>
+                <option value="4" >Three Tier Air Conditioned Class</option>
+                <option value="5">Two Tier Air Conditioned Class</option>
+                <option value="6"selected>First Class Air Conditioned</option>
+              </select>
+            </div>
+
+            <div class="inputbox">
+              <input type="submit" value="Search">
+            </div>
+
+          </form>
+
+        </div>
+      </div>
+    </section>
+  </form>
+
+
+  {%endblock%}
