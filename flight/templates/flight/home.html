@@ -1,0 +1,103 @@
+{%extends 'flight/base.html'%}
+{%block content%}
+
+{%load static%}
+
+<link rel="stylesheet" href="{%static 'flight/home.css'%}">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+<div class="bgimage">
+
+<div class="text">
+
+    <h1>Travel Agency System</h1> 
+    <hr>
+    <h4>Holidazzle brings you a platform wherein you can book flights, cabs and trains all at one place. Get onboard for a hassle-free travel experience.</h4>
+        <form action="{%url 'about'%}">
+        <button type="submit" class="btn btn-outline-light"> About Us </button>
+        </form>
+
+
+    </div>
+</div>
+<section class="features">
+    <h1>Travel Options</h1>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="feature-box">
+                    <div class="feature-img">
+                        <img src="{% static 'flight/Flight.jpg' %}"> 
+                        {%if user.is_authenticated%} 
+                        <h4><a href="{%url 'flight1:flight'%}">Flight Bookings</a></h4>
+                        {%else%}
+                        <h4><a href="{%url 'loginuser'%}">Flight Bookings</a></h4>  
+                        {%endif%}    
+                    </div>
+                </div>
+            </div>   
+
+            <div class="col-md-4">
+                <div class="feature-box">
+                    <div class="feature-img">
+                        <img src="{% static 'flight/taxi.jpg' %}">  
+                        {%if user.is_authenticated%} 
+                        <h4><a href="{%url 'cab1:cab'%}">Cab Bookings</a></h4>
+                        {%else%}
+                        <h4><a href="{%url 'loginuser'%}">Cab Bookings</a></h4>
+                        {%endif%}       
+                    </div>
+                </div>
+            </div>        
+
+            <div class="col-md-4">
+                <div class="feature-box">
+                    <div class="feature-img">
+                        <img src="{% static 'flight/Train.jpg' %}"> 
+                        {%if user.is_authenticated%}  
+                        <h4><a href="{%url 'train1:train'%}">Train Bookings</a></h4>
+                        {%else%}      
+                        <h4><a href="{%url 'loginuser'%}">Train Bookings</a></h4>
+                        {%endif%}                          
+                    </div>
+                </div>
+            </div> 
+
+        </div>
+    </div>
+</section>
+<section class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+                <h4>Services</h4>
+                <p>Flight Bookings</p>
+                <p>Cab Bookings</p>
+                <p>Train Bookings</p>
+            </div>
+            <div class="col-md-3">                
+                <h4>Features</h4>
+                <p>Deals & Offers</p>
+                <p>Secure Payments</p>
+                <p>Cancellation policy</p>
+            </div>
+            <div class="col-md-3">                
+                <h4>Quick Contact</h4>
+                <p>+1 0123456789</p>
+                <p>holidazzle@gmail.com</p>
+                <p>Shil Kalyan Road, PY City</p>
+            </div>
+            <div class="col-md-3">                
+                <h4>Follow us on</h4>
+                <p><i class="fab fa-facebook-square" style="padding-right:3px ;"></i> Facebook</p>
+                <p><i class="fab fa-youtube" style="padding-right:3px ;"></i>YouTube</p>
+                <p><i class="fab fa-twitter" style="padding-right:3px ;"></i>Twitter</p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+{%endblock%}

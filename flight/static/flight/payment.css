@@ -1,0 +1,107 @@
+.contain{
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  
+}
+
+.card {
+    max-width: 1000px;
+    margin: 2vh;
+    box-shadow: 0 0 20px rgba(0,0,0,0.15);
+}
+
+.card-top {
+    padding: 0.7rem 5rem;
+}
+
+.card-top a {
+    float: right;
+    margin-top: 0.7rem;
+}
+
+.card-body {
+    padding: 0 5rem 5rem 5rem;
+    background-image: url("https://i.imgur.com/4bg1e6u.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+@media(max-width:768px) {
+    .card-body {
+        padding: 0 1rem 1rem 1rem;
+        background-image: url("https://i.imgur.com/4bg1e6u.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+
+    .card-top {
+        padding: 0.7rem 1rem;
+    }
+}
+
+.contain form {
+    padding: 2vh 0;
+}
+
+.contain input {
+    border: 1px solid rgba(0, 0, 0, 0.137);
+    padding: 1vh;
+    margin-bottom: 4vh;
+    outline: none;
+    width: 100%;
+    background-color: rgb(247, 247, 247);
+}
+
+.left {
+    background-color: #ffffff;
+    padding: 2vh;
+}
+
+.left .col-4 {
+    padding-left: 0;
+}
+
+.right {
+    background-color: #ffffff;
+    padding: 2vh;
+}
+
+
+
+#cvv {
+    background-image: linear-gradient(to left, rgba(255, 255, 255, 0.575), rgba(255, 255, 255, 0.541)), url("https://img.icons8.com/material-outlined/24/000000/help.png");
+    background-repeat: no-repeat;
+    background-position-x: 95%;
+    background-position-y: center;
+}
+
+.inputbox1{
+    
+    margin-bottom: 20px;
+  }
+
+.inputbox1 span{
+
+    margin-bottom: 5px;
+    display: inline-block; 
+  }
+
+.inputbox1 div{   
+    margin-bottom: 5px;
+}
+
+.inputbox1 input{ 
+    width:40%;
+    padding: 5px 20px;
+    outline: none;
+    font-weight: 400;
+    border: 1px solid #607d8b;
+    font-size: 16px;
+    letter-spacing: 1px;
+    color: #607d8b;
+    background: transparent;
+    border-radius: 30px;
+  }
+

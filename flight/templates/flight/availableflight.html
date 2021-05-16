@@ -1,0 +1,37 @@
+{%extends 'flight/base.html'%}
+{%block content%}
+
+{%load static%}
+<link rel="stylesheet" href="{%static 'flight/availableflight.css'%}">
+
+<h1>Available Flights</h1>
+
+<table class="content-table">
+    
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Departure</th>
+            <th>Duration</th>
+            <th>Arrival</th>      
+            <th>Price</th>     
+            <th>Action</th>     
+        </tr>
+    </thead>
+    <tbody>
+        {%for i in flights%}
+        <tr>
+            <td><img src="{{i.image.url}}" height="50px" width="50px"><span id="flightname">{{i.name}}</span></td>
+            <td>{{i.departuretime|time:'h:i a'}}</td>
+            <td>{{i.duration}}</td>
+            <td>{{i.arrivaltime|time:'h:i a'}}</td>
+            <td>₹{{i.price}}</td>
+            
+            <form action="{%url 'flight1:payment' i.id %}">
+            <td><input type="submit" class="price" value="Book Now"></td>    
+            </form>                  
+        </tr>       
+        {%endfor%}
+    </tbody>
+</table>
+{%endblock%}

@@ -1,0 +1,45 @@
+{%extends 'flight/base.html'%}
+{%block content%}
+
+{%load static%}
+<link rel="stylesheet" href="{%static 'flight/signupuser.css'%}">
+    
+<section>
+  <div class="imgbox">
+    <img src="{%static 'flight/bg5.jpg'%}">
+  </div>
+
+  <div class="contentbox">
+    <div class="formbox">
+      {{error}}   
+      <br>
+      <br>
+      <h2>Sign Up</h2>
+      <form method="POST">
+        {%csrf_token%}
+
+        <div class="inputbox">
+          <span>Username</span>
+          <input type="text" name="username">
+        </div>      
+        <div class="inputbox">
+          <span>Password</span>
+          <input type="password" name="password1">
+        </div>
+        <div class="inputbox">
+          <span>Confirm Password</span>
+          <input type="password" name="password2">
+        </div>
+        <div class="inputbox">
+          <input type="submit" value="Sign up">
+        </div>
+        <div class="inputbox">
+          <p>Already have an account? <a href="{%url 'loginuser'%}">Log In</a></p>
+        </div>
+
+      </form>         
+      </div>
+  </div>
+</section>
+
+{%endblock%}

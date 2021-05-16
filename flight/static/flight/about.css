@@ -1,0 +1,39 @@
+*{
+	margin:0px;
+	padding:0px;
+}
+
+.bgimage{
+	height: 100%;
+    width: 98.7vw;  
+    overflow: hidden;  
+    background: -webkit-linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/static/flight/luggage.jpg");
+	background-size: cover;
+
+}
+
+.text{	
+	text-align: center;
+	color:white;
+	margin:0px 200px 10px 200px;
+}
+
+.text h4{
+
+	font-size: 15px;
+	font-family: sans-serif;	
+	margin:0px 0px 20px 0px;
+}
+
+.text h1{
+	font-size:62px;
+	margin:70px 0px 50px 0px;
+	font-family:sans-serif;
+	
+}
+
+a{
+	color:white;
+	text-decoration: none;
+}
+

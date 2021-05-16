@@ -1,0 +1,80 @@
+{%extends 'flight/base.html'%}
+{%block content%}
+
+{%load static%}
+
+<script type="text/javascript">
+  
+    function undisableBtn() {
+        document.getElementById("returnDate").disabled = false;
+        document.getElementById("returnDatetext").style.color = "#607d8b";
+        document.getElementById("returnDate").style.color = "#607d8b";
+        document.getElementById("returnDate").style.border = "1px solid #607d8b";
+    }
+    function disableBtn() {
+        document.getElementById("returnDate").disabled = true;
+        document.getElementById("returnDatetext").style.color = "#c0dae7";
+        document.getElementById("returnDate").style.color = "#c0dae7";
+        document.getElementById("returnDate").style.border = "1px solid #c0dae7";       
+    }
+</script>
+
+<form action="{%url 'flight1:availableflight'%}">  
+        
+        <link rel="stylesheet" href="{%static 'flight/flight.css'%}">
+        <section>
+          <div class="imgbox">
+            <img src="{%static 'flight/bgf2.jpg'%}">       
+          </div>
+        
+          <div class="contentbox">
+            <div class="formbox">
+              <h2>Flight Booking</h2>
+              <form action="index.html" method="post">
+        
+                <div class="radiobtn">
+                  <input type="radio" name="check" checked="checked" onclick="undisableBtn()"><span>Roundtrip</span>
+                  <input type="radio" name="check" onclick="disableBtn()"><span>One way</span>          
+                </div>
+        
+                <div class="inputbox">
+                  <span>Flying From</span>
+                  <input type="text" name="location1" placeholder="City or Airport" required>
+                </div>
+        
+                <div class="inputbox">
+                  <span>Flying To</span>
+                  <input type="text" name="location2" placeholder="City or Airport" required>
+                </div>
+        
+                <div class="inputbox">
+                  <span>Departure Date</span>
+                  <input name="departuredate" type="date" required>
+                </div>
+        
+                <div class="inputbox" >
+                  <span id="returnDatetext">Return Date</span>
+                  <input name="returndate" type="date" id="returnDate" required>
+                </div>
+        
+                <div class="inputbox1">
+                  <span>Adult</span>
+                  <input name="adultcount" type="number" value="1" style="margin-right: 14px;">
+                
+                  <span>Childern</span>
+                  <input name="childcount" type="number" value="0">
+                </div>
+        
+                <div class="inputbox">
+                  <input type="submit" value="Search">
+                </div>
+        
+              </form>
+        
+            </div>
+          </div>
+        </section>    
+</form>
+
+
+{%endblock%}
