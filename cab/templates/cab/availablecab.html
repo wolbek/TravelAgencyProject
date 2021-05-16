@@ -1,0 +1,40 @@
+{%extends 'flight/base.html'%}
+{%block content%}
+{%load static%}
+<link rel="stylesheet" href="{%static 'flight/availableflight.css'%}">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+<h1>Available Cabs</h1>
+
+<table class="content-table">
+    
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Luggage Bags</th>
+            <th>Duration</th>
+            <th>Seat</th>      
+            <th>Price</th>     
+            <th>Action</th>     
+        </tr>
+    </thead>
+    <tbody>
+        {%for i in cabs%}
+        <tr>
+            <td><img src="{{i.image.url}}" height="50px" width="70px"><span id="flightname">{{i.name}}</span></td>
+            <td>{{i.luggagebag}}</td>
+            <td>{{i.duration}}</td>
+            <td>{{i.seat}}</td>
+            <td>₹{{i.price}}</td>
+            
+            <form action="{%url 'cab1:payment' i.id %}">
+                <td><input type="submit" class="price" value="Book Now"></td>    
+            </form>                  
+        </tr>       
+        {%endfor%}
+    </tbody>
+</table>
+
+
+
+{%endblock%}

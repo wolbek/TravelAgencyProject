@@ -1,0 +1,49 @@
+{%extends 'flight/base.html'%}
+{%block content%}
+
+{%load static%}
+
+<form action="{%url 'cab1:availablecab'%}">  
+
+  <link rel="stylesheet" href="{%static 'flight/cab.css'%}">
+  <section>
+    <div class="imgbox">
+      <img src="{%static 'flight/bgc1.jpg'%}">        
+    </div>
+
+      <div class="contentbox">
+        <div class="formbox">
+          <h2>Cab Booking</h2>
+          <form action="index.html" method="post">
+
+            <div class="inputbox">
+              <span>From</span>
+              <input type="text" placeholder="City or Station" name="location1" required>
+            </div>
+
+            <div class="inputbox">
+              <span>To</span>
+              <input type="text" placeholder="City or Station" name="location2" required>
+            </div>
+
+            <div class="inputbox">
+              <span>Departure Date</span>
+              <input type="date" name="departure" required>
+            </div>
+
+            <div class="inputbox">
+              <span>Departure Time</span>
+              <input type="time" name="pickuptime" required>
+            </div>
+
+            <div class="inputbox">
+              <input type="submit" value="Search">
+            </div>
+
+          </form>
+
+        </div>
+      </div>
+    </section>
+  </form>
+  {%endblock%}
